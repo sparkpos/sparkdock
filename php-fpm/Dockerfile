@@ -30,7 +30,7 @@ USER root
 ARG INSTALL_SOCKETS=true
 ENV INSTALL_SOCKETS ${INSTALL_SOCKETS}
 RUN if [ ${INSTALL_SOCKETS} = true ]; then \
-    docker-php-ext-install sockets \
+    docker-php-ext-install sockets && \
     docker-php-ext-enable sockets \
 ;fi
 #####################################
