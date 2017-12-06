@@ -13,8 +13,6 @@ tar -C xhprof -zxvf /tmp/xhprof.tar.gz --strip 1 && \
 ) && \
 rm -rf /tmp/xhprof* && \
 docker-php-ext-enable xhprof && \
-echo 'xhprof.output_dir = /tmp/xhprof' >> docker-php-ext-xhprof.ini
+echo 'xhprof.output_dir = /var/www/xhprof' >> /usr/local/etc/php/conf.d/docker-php-ext-xhprof.ini
 
 VOLUME /var/www/xhprof
-
-EXPOSE 9001
